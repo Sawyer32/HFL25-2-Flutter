@@ -20,3 +20,7 @@ class AuthAuthenticated extends AuthState {
 }
  
 class AuthUnauthenticated extends AuthState {}
+
+class SignupState extends AuthState {
+  
+}

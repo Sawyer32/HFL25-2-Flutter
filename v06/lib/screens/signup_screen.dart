@@ -1,15 +1,15 @@
-import 'package:v06/auth/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:v06/auth/cubit/auth_cubit.dart';
  
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
  
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
  
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
-      appBar: AppBar(title: const Text('Login View'),backgroundColor: Colors.amberAccent,),
+      appBar: AppBar(title: const Text('Sign up View'),backgroundColor: Colors.amberAccent,),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -50,21 +50,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    context.read<AuthCubit>().signIn(
+                    context.read<AuthCubit>().signUp(
                           _emailController.text,
                           _passwordController.text,
                         );
                   }
                 },
-                child: const Text('Login'),
+                child: const Text('Register'),
               ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  context.read<AuthCubit>().enterSignUp();
-                },
-                child: const Text('Sign Up'),
-              )
             ],
           ),
         ),

@@ -1,5 +1,5 @@
-import 'package:auth_app/auth/cubit/auth_cubit.dart';
-import 'package:auth_app/auth/cubit/auth_state.dart';
+import 'package:v06/auth/cubit/auth_cubit.dart';
+import 'package:v06/auth/cubit/auth_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -2,7 +2,7 @@ import 'import_nest.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: '.env');
+  await dotenv.load(fileName: '../.env');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);  
   runApp(const MyApp());
 }
@@ -43,6 +43,9 @@ class AuthFlow extends StatelessWidget {
         }
         if (state is AuthUnauthenticated) {
           return const LoginScreen();
+        }
+        if (state is SignupState) {
+          return const SignUpScreen();
         }
         return const SplashScreen();
       },

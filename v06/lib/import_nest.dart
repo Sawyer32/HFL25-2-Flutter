@@ -1,10 +1,11 @@
-export 'package:auth_app/auth/cubit/auth_cubit.dart';
-export 'package:auth_app/auth/cubit/auth_state.dart';
-export 'package:auth_app/auth/repository/auth_repository.dart';
+export 'package:v06/auth/cubit/auth_cubit.dart';
+export 'package:v06/auth/cubit/auth_state.dart';
+export 'package:v06/auth/repository/auth_repository.dart';
 export 'package:flutter_dotenv/flutter_dotenv.dart';
-export 'package:auth_app/screens/home_screen.dart';
-export 'package:auth_app/screens/login_screen.dart';
-export 'package:auth_app/screens/splash_screen.dart';
+export 'package:v06/screens/home_screen.dart';
+export 'package:v06/screens/login_screen.dart';
+export 'package:v06/screens/splash_screen.dart';
+export 'package:v06/screens/signup_screen.dart';
 export 'package:flutter/material.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:auth_app/auth/cubit/auth_state.dart';
-import 'package:auth_app/auth/repository/auth_repository.dart';
+import 'package:v06/auth/cubit/auth_state.dart';
+import 'package:v06/auth/repository/auth_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
  
@@ -26,6 +26,12 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signOut() async {
     await _authRepository.signOut();
   }
+
+  Future<void> signUp(String email, String password) async {
+    await _authRepository.signUp(email: email, password: password);
+  }
+
+  void enterSignUp() => emit(SignupState());
   
   @override
   Future<void> close() {
