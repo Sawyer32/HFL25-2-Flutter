@@ -27,6 +27,10 @@ class AuthRepository {
   Future<void> signUp({required String email, required String password}) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      await analytics.logEvent(name: "sign_up_user", parameters: {
+        "email": email,
+        "message": "Användare registrerad"
+      });
     } on FirebaseAuthException catch (e) {
       throw Exception(e.message);
     }
@@ -34,5 +38,6 @@ class AuthRepository {
  
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
+    await analytics.logEvent(name: "sign_out_user", parameters: { "message": "Användare har loggat ut" });
   }
 }
